@@ -8,11 +8,15 @@
     align-content: center;
 }
  #main_div img {
-    width: 500px;
+    width: 400px;
     margin: auto;
     display: block;
  }
 
-h1 {
-    font-size: 80px;
+#main_div h1 {
+    font-size: 50px;
+}
+
+#main_div h3 {
+    font-size: 30px;
 }
