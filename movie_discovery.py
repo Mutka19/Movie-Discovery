@@ -43,8 +43,8 @@ def search_for_movie(movie):
 
 #print(search_for_movie("Shrek"))
 #names = ", ".join([sublist["name"] for sublist in get_3_default_movies()[0]["genres"]])
-movies = get_3_default_movies()
-print(movies[0])
+#movies = get_3_default_movies()
+#print(movies[0])
 #print(get_movie_img(movies[0]['poster_path']))
 #print(names)
 #print(get_3_default_movie_images())
