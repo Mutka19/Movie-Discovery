@@ -1,5 +1,7 @@
+* {
+    background-color: blanchedalmond;
+}
 #main_div {
-    display: grid;
     position: relative;
     width: 50%;
     margin-left: auto;
@@ -8,7 +10,7 @@
     align-content: center;
 }
  #main_div img {
-    width: 400px;
+    width: 250px;
     margin: auto;
     display: block;
  }
