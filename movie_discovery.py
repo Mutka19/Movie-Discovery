@@ -30,14 +30,22 @@ def get_movie_img(poster_path):
 
 def search_for_movie(movie):
     TMBD_BASE_URL = "https://api.themoviedb.org/3"
-    TMBD_MOVIE_PATH = "/search/movie"
+    TMBD_MOVIE_PATH = "/movie/"
+    TMBD_SEARCH_PATH = "/search/movie"
     MOVIE_PARAM = movie
 
     request = rq.get(
-        TMBD_BASE_URL + TMBD_MOVIE_PATH,
+        TMBD_BASE_URL + TMBD_SEARCH_PATH,
         params={"api_key": os.getenv("TMBD_API_KEY"), "query": MOVIE_PARAM},
     )
-    return request.json()
+    if request.json()["results"][0]["id"]:
+        ID = request.json()["results"][0]["id"]
+        request = rq.get(
+            TMBD_BASE_URL + TMBD_MOVIE_PATH + str(ID),
+            params={"api_key": os.getenv("TMBD_API_KEY")},
+        )
+        return request.json()
+    return request.json()["results"]
 
 
 def get_wiki_link(name):
@@ -82,13 +90,3 @@ def get_wiki_link(name):
                     list(result.json()["query"]["pages"])[0]
                 ]["fullurl"]
     return
-
-
-# print(search_for_movie("Shrek"))
-# names = ", ".join([sublist["name"] for sublist in get_3_default_movies()[0]["genres"]])
-# movies = get_3_default_movies()
-# print(movies[0])
-# print(get_movie_img(movies[0]['poster_path']))
-# print(names)
-# print(get_3_default_movie_images())
-# print(get_wiki_link("Selena"))
