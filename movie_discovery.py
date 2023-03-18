@@ -40,6 +40,50 @@ def search_for_movie(movie):
     return request.json()
 
 
+def get_wiki_link(name):
+    WIKI_BASE_URL = "https://www.wikipedia.org/w/api.php"
+
+    request = rq.get(
+        WIKI_BASE_URL,
+        params={
+            "action": "query",
+            "prop": "categories",
+            "list": "search",
+            "srsearch": name,
+            "format": "json",
+        },
+    )
+    for i in request.json()["query"]["search"]:
+        rq1 = rq.get(
+            WIKI_BASE_URL,
+            params={
+                "action": "query",
+                "prop": "categories",
+                "titles": i["title"],
+                "format": "json",
+            },
+        )
+
+        for category in rq1.json()["query"]["pages"][
+            list(rq1.json()["query"]["pages"])[0]
+        ]["categories"]:
+            if "film" in category["title"]:
+                result = rq.get(
+                    WIKI_BASE_URL,
+                    params={
+                        "action": "query",
+                        "prop": "info",
+                        "inprop": "url",
+                        "format": "json",
+                        "titles": i["title"],
+                    },
+                )
+                return result.json()["query"]["pages"][
+                    list(result.json()["query"]["pages"])[0]
+                ]["fullurl"]
+    return
+
+
 # print(search_for_movie("Shrek"))
 # names = ", ".join([sublist["name"] for sublist in get_3_default_movies()[0]["genres"]])
 # movies = get_3_default_movies()
@@ -47,3 +91,4 @@ def search_for_movie(movie):
 # print(get_movie_img(movies[0]['poster_path']))
 # print(names)
 # print(get_3_default_movie_images())
+# print(get_wiki_link("Selena"))
