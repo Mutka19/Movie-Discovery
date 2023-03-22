@@ -7,7 +7,7 @@ from movie_discovery import (
     search_for_movie,
 )
 
-app = flask.Flask("Movie Discovery")
+app = flask.Flask("movie-discovery")
 
 
 @app.route("/")
@@ -54,4 +54,4 @@ def handle_user_info():
     return
 
 
-app.run(debug=True)
+# app.run(debug=True)
