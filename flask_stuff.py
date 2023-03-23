@@ -13,12 +13,12 @@ app = flask.Flask("movie-discovery")
 @app.route("/")
 def index():
     index = random.randrange(0, 3)
-    movies = get_3_default_movies()
-    movie_title = movies[index]["title"]
-    movie_overview = movies[index]["overview"]
-    movie_genres = ", ".join([movie["name"] for movie in movies[index]["genres"]])
-    movie_img = get_movie_img(movies[index]["poster_path"])
-    link = get_wiki_link(movies[index]["title"])
+    movie = get_3_default_movies(index)
+    movie_title = movie["title"]
+    movie_overview = movie["overview"]
+    movie_genres = ", ".join([movie["name"] for movie in movie["genres"]])
+    movie_img = get_movie_img(movie["poster_path"])
+    link = get_wiki_link(movie["title"])
     return flask.render_template(
         "index.html",
         Title=movie_title,
@@ -54,4 +54,4 @@ def handle_user_info():
     return
 
 
-# app.run(debug=True)
+app.run(debug=True)

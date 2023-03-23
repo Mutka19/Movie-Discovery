@@ -6,19 +6,16 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
 
-def get_3_default_movies():
+def get_3_default_movies(index):
     TMBD_BASE_URL = "https://api.themoviedb.org/3"
     TMBD_MOVIE_PATH = "/movie/"
     MOVIE_IDS = ["808", "1091", "9615"]
-    MOVIE_LIST = []
 
-    for ID in MOVIE_IDS:
-        request = rq.get(
-            TMBD_BASE_URL + TMBD_MOVIE_PATH + ID,
-            params={"api_key": os.getenv("TMBD_API_KEY")},
-        )
-        MOVIE_LIST.append(request.json())
-    return MOVIE_LIST
+    request = rq.get(
+        TMBD_BASE_URL + TMBD_MOVIE_PATH + MOVIE_IDS[index],
+        params={"api_key": os.getenv("TMBD_API_KEY")},
+    )
+    return request.json()
 
 
 def get_movie_img(poster_path):
