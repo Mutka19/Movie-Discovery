@@ -1,13 +1,13 @@
 import flask
 import random
-from movie_discovery import (
+from api_handler import (
     get_3_default_movies,
     get_movie_img,
     get_wiki_link,
     search_for_movie,
 )
 
-app = flask.Flask("movie-discovery")
+app = flask.Flask(__name__)
 
 
 @app.route("/")
@@ -51,7 +51,5 @@ def handle_user_info():
             IMG=movie_img,
             WikiLink=link,
         )
-    return
-
 
 app.run(debug=True)
