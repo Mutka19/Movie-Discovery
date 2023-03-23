@@ -1,1 +1,1 @@
-web: gunicorn flask_stuff:app
+web: gunicorn movie-discovery:app
