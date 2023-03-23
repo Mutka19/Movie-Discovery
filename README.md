@@ -1,20 +1,18 @@
 # project1-ies26
 ### Overview
 This app was built using the flask framework written in python. It includes the followig libraries:
-..* random
-..* requests
-..* json
-..* os
-..* dotenv
-..* flask
+<ul>
+    <li> random
+    <li> requests
+    <li> json
+    <li> os
+    <li> dotenv
+    <li> flask
+</ul>
 
 If you were to fork this repo you would need to install all libraries from the requirements.txt file, as well as get a TMBD api key and set it as an environmental variable called TMBD_API_KEY. 
 
-After this you can run it locally on your machine by uncommenting 
-'''python
-# app.run(debug=True)
-'''
- from the bottom of the movie-handler.py file. The movie-handler.py file contains all the backend code, the api_handler.py file contains all the logic related to the APIs and their functionality. The templates folder contains the html for the frontend of the website and the static folder contains the CSS used to style it.
+After this you can run it locally on your machine by uncommenting <strong> app.run(debug=True) <strong> from the bottom of the movie-handler.py file. The movie-handler.py file contains all the backend code, the api_handler.py file contains all the logic related to the APIs and their functionality. The templates folder contains the html for the frontend of the website and the static folder contains the CSS used to style it.
 
  ### Technical Issues
  #### 1
