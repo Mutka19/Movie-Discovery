@@ -26,3 +26,5 @@ After this you can run it locally on your machine by uncommenting <strong> app.r
 #### Improvement
 One improvement that I would like to make would be to improve the looks of the page. At the moment it is very basic and does not have much personallity but given some time I would love to beautify it and make it unique.
 
+##### fly.io link
+[Click here to view website!](https://movie-discovery.fly.dev/)
