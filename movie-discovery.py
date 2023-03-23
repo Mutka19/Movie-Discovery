@@ -52,4 +52,5 @@ def handle_user_info():
             WikiLink=link,
         )
 
-app.run(debug=True)
+
+# app.run(debug=True)
