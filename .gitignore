@@ -130,3 +130,9 @@ dmypy.json
 
 # fly.io
 fly.toml
+
+# vscode
+.vscode
+
+#DS_Store
+.DS_Store
