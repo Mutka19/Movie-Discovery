@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='review.css') }}" rel="stylesheet"/>
     <title>Review</title>
 </head>
 <body>
 	<h1>Write a Review</h1>
 
 	<form action="/review/{{ movie_id }}" method="POST">
-		<label>{{ movie_title }}</label>
-
-		<label for="review_text">Review:</label>
+		<label for="review_text">Tell us how you felt about {{ movie_title }}:</label>
 		<textarea id="review_text" name="review_text" maxlength="280" placeholder="Max length 280 characters"></textarea><br>
 
 		<label for="rating">Rating:</label>
