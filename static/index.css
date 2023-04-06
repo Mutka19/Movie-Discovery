@@ -28,7 +28,6 @@ input {
 }
 
 #header {
-    background-color: #008CBA;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -44,3 +43,26 @@ input {
 #header .button:hover {
     background-color: #006f8b;
 }
+.review {
+    background-color: wheat;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .review h4 {
+    background-color: wheat;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .review p {
+    background-color: wheat;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .review p:last-child {
+    margin-bottom: 0;
+  }
