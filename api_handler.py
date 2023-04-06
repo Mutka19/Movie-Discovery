@@ -17,6 +17,7 @@ def get_3_default_movies(index):
     )
     return request.json()
 
+
 def get_movie_by_id(id):
     TMBD_BASE_URL = "https://api.themoviedb.org/3"
     TMBD_MOVIE_PATH = "/movie/"
@@ -26,6 +27,7 @@ def get_movie_by_id(id):
         params={"api_key": os.getenv("TMBD_API_KEY")},
     )
     return request.json()
+
 
 def get_movie_img(poster_path):
     TMBD_BASE_IMAGE_URL = "https://image.tmdb.org/t/p/"
@@ -98,4 +100,4 @@ def get_wiki_link(name):
     return
 
 
-#print(search_for_movie("Terminator")["id"])
+# print(search_for_movie("Terminator")["id"])
