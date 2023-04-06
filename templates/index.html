@@ -8,13 +8,22 @@
     <title>Movie Discovery</title>
 </head>
 <body>
+    <div id="header">
+        {% if username is none %}
+        <a class="button" href="/signup">Sign Up</a>
+        <a class="button" href="/login">Log In</a>
+        {% else %}
+        <a href="#">{{ username }}</a>
+        {% endif %}
+    </div>
     <div id="main_div">
         <h1>Movie Discovery</h1>
-        <h3>{{Title}}</h2>
-        <h5 name="Overview">{{Overview}}</h5>
-        <p name="Genres">Genres: {{Genres}}</p>
-        <img src={{IMG}} alt="Movie Picture">
+        <h3>{{ Title }}</h2>
+        <h5 name="Overview">{{ Overview }}</h5>
+        <p name="Genres">Genres: {{ Genres }}</p>
+        <img src="{{ IMG }}" alt="Movie Picture">
         <a name="Wikipedia" href="{{WikiLink}}">Wikipedia Page<br></a>
+        <a href="/review/{{ movie_id }}" class="button">Write a Review for {{ Title }}!</a>
         <form method="POST">
             <input type="text" name="Movie" placeholder="Enter a movie">
             <button type="submit" value="Submit">Submit</button>
