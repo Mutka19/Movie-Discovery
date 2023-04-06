@@ -9,7 +9,7 @@
 <body>
 	<h1>Write a Review</h1>
 
-	<form action="/submit_review" method="POST">
+	<form action="/review/{{ movie_id }}" method="POST">
 		<label>{{ movie_title }}</label>
 
 		<label for="review_text">Review:</label>

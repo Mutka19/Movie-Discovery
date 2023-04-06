@@ -28,6 +28,14 @@
             <input type="text" name="Movie" placeholder="Enter a movie">
             <button type="submit" value="Submit">Submit</button>
         </form>
+
+        {% if review %}
+            <div class="review">
+                <h4>Review by {{ review.user_name }}</h4>
+                <p>{{ review.review_text }}</p>
+                <p>Rating: {{ review.rating }}</p>
+            </div>
+        {% endif %}
     </div>
 
     
