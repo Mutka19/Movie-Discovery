@@ -13,7 +13,8 @@
         <a class="button" href="/signup">Sign Up</a>
         <a class="button" href="/login">Log In</a>
         {% else %}
-        <a href="#">{{ username }}</a>
+        <a href="#">Welcome, {{ username }}!</a><br>
+        <a href="{{ url_for('signout') }}">Sign Out?</a>
         {% endif %}
     </div>
     <div id="main_div">
@@ -33,7 +34,7 @@
             <div class="review">
                 <h4>Review by {{ review.user_name }}</h4>
                 <p>{{ review.review_text }}</p>
-                <p>Rating: {{ review.rating }}</p>
+                <p>Rating: {{ review.rating }}/5</p>
             </div>
         {% endif %}
     </div>
