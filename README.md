@@ -29,6 +29,9 @@ After this you can run it locally on your machine by uncommenting <strong> app.r
  Currently for certain searches where no results are found, the website crashes. I would like to fix this in the future by implemented try/except blocks to return safe data and informs the user that the entery they searched for was either invalid or does not exist.
  ##### 2
  When I try to open up more than 1 page I get an internal server error. I'm not sure how to fix this but it may just have to do witht the fact that I have the unpaid version of fly.io
+ ##### 3
+ I do not have any error for trying to turn in a review with and empty review textbox 
+ so that may cause an error. I would've liked to have fixed this and added error handling for the review page if I had more time.
 #### Improvement
 ##### 1
 One improvement that I would like to make would be to improve the looks of the page. At the moment it is very basic and does not have much personallity but given some time I would love to beautify it and make it unique.
