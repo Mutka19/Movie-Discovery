@@ -26,3 +26,21 @@
 input {
     background-color: #dfdfd2;
 }
+
+#header {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+}
+
+#header .button:hover {
+    background-color: #006f8b;
+}
