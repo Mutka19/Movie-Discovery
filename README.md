@@ -20,8 +20,9 @@ After this you can run it locally on your machine by uncommenting <strong> app.r
  #### 2
  I also had issue using the wikimedia API as I couldn't find much great documentation on it. At first I wasn't able to figure out how to extract links from the json request best I was able to come up with a decently clever solution for it. I also had an issue with sorting certain searches to only return films instead of search directories or possibly other media that had the same name. To fix this I maade a query that would return all items with that name, then I would return the page link of the result that contain the keyword film in its category list.
  #### 3
- I had a hard time figuring out how to get the review objects to work in the 
- postgresql. However once I figured that out, things went swimmingly.
+ I had a hard time figuring out how to get the review objects to work in the postgresql. However once I figured that out, things went swimmingly.
+ #### 4
+ I ended up spending a lot of time troubleshooting deployment. I found it difficult to fix since my issue was with my database url. I had mistakenly added an extra 's' to postgress and since the fly.io secrets are only viewaable as digests I couldn't tell it was misspelled. After a while I tried reseting my secrets and it worked. It was frustrating after spedning so much time looking for errors elsewhere but I was relieved to  have finished on time
 
  ### Known problems/Possible improvements
  #### Problem
@@ -30,8 +31,7 @@ After this you can run it locally on your machine by uncommenting <strong> app.r
  ##### 2
  When I try to open up more than 1 page I get an internal server error. I'm not sure how to fix this but it may just have to do witht the fact that I have the unpaid version of fly.io
  ##### 3
- I do not have any error for trying to turn in a review with and empty review textbox 
- so that may cause an error. I would've liked to have fixed this and added error handling for the review page if I had more time.
+ I do not have any error for trying to turn in a review with and empty review textbox so that may cause an error. I would've liked to have fixed this and added error handling for the review page if I had more time.
 #### Improvement
 ##### 1
 One improvement that I would like to make would be to improve the looks of the page. At the moment it is very basic and does not have much personallity but given some time I would love to beautify it and make it unique.
