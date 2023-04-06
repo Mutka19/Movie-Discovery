@@ -23,6 +23,8 @@ After this you can run it locally on your machine by uncommenting <strong> app.r
  I had a hard time figuring out how to get the review objects to work in the postgresql. However once I figured that out, things went swimmingly.
  #### 4
  I ended up spending a lot of time troubleshooting deployment. I found it difficult to fix since my issue was with my database url. I had mistakenly added an extra 's' to postgress and since the fly.io secrets are only viewaable as digests I couldn't tell it was misspelled. After a while I tried reseting my secrets and it worked. It was frustrating after spedning so much time looking for errors elsewhere but I was relieved to  have finished on time
+ ##### 5
+ I also decided not to have my page locked by a login. Which was a little different than what was on the assignment directions. However I did restrict the users access so that they could not leave reviews on the site until they logged in. They are only able to look at the movies using the search bar until they sign up and log in.
 
  ### Known problems/Possible improvements
  #### Problem
